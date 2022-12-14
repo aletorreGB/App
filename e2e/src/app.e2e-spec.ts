@@ -1,17 +1,16 @@
-import { browser, element, by} from 'protractor';
+import { AppPage } from './app.po';
 
-describe('Mi prueba',()=>{
-    // codigo de configuración
-    beforeEach(()=>{
-        browser.get("/home");
+describe('new App', () => {
+  let page: AppPage;
 
+  beforeEach(() => {
+    page = new AppPage();
   });
-    it("El usuario puede navegar a la pestaña hija",async ()=>{
-        await element(by.css("[ion-item]")).click();
-        await browser.waitForAngularEnabled(false);
-        browser.driver.sleep(2000);
-        expect(element(by.css(".ion-item")).getText()).toContain("detalle");
-    });
+
+  it('should be blank', () => {
+    page.navigateTo();
+    expect(page.getParagraphText()).toContain('Start with Ionic UI Components');
+  });
 });
 
 

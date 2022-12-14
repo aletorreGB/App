@@ -5,7 +5,7 @@ const routes: Routes = [
 
     {
       path: '',
-      redirectTo: 'detalle',
+      redirectTo: 'login',
       pathMatch: 'full'
     },
     {
@@ -34,6 +34,14 @@ const routes: Routes = [
   {
     path: 'userlist',
     loadChildren: () => import('./userlist/userlist.module').then( m => m.UserlistPageModule)
+  },
+  {
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+  },
+  {
+    path: 'profile/:id',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
 
 ];
